@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh" data-page-node-id="4DIglheAscBWzgKfbfE1nA">
+<head data-page-node-id="SBVSAVMqCJci235Nb25a7M">
+<meta charset="utf-8" data-page-node-id="F8GgcnfZRD1OkpHymZp44z">
+<meta name="viewport" content="width=device-width,initial-scale=1" data-page-node-id="oJnL0Ny6GYmgECHCKz6mbq">
+<title>Rocky 8779 Landmark Annotator</title>
+<link rel="stylesheet" href="style.css" data-page-node-id="DDGylnacUnphV4HeI3DnC8">
+<script src="app.js" defer></script>
+</head>
+<body data-page-node-id="ggOFVd2wC1hC5FkKiGhNbL">
+<div id="boot" data-page-node-id="ddXFLENXh8vC0a2831qmed">
+  <h1 data-page-node-id="5zq3pUT0BQQtXCiuHXfO2R">Rocky 8779 Landmark Annotator</h1>
+  <div id="bootlog" class="mono" data-page-node-id="xqgKHlAuEOqvebfrm3Oftm">Loading...</div>
+</div>
+<div id="app" style="display:none" data-page-node-id="EAYGjMnOfAlDrp5k31mZwr">
+  <header data-page-node-id="cLATZ8zFPNDs5dicgv3dI1">
+    <h2 data-page-node-id="9dWeYen9oJZY4vHnkrSRQP">8779 头模 landmark 标注 <span id="prog" data-page-node-id="vs9D5RE11oLT8i1OyZbPV4"></span></h2>
+    <span class="hint" data-page-node-id="WBOK7psjHvCpbFZWiY7HzP">滚轮缩放 · 拖动平移 · 双击复位 · ←/→ 切换 · Z 撤销 · 空格下一项 · 数据自动保存</span>
+  </header>
+  <div id="tipbar" data-page-node-id="3YvzJ9qVsyCh8ItP7pfd6P"></div>
+  <div id="wrap" data-page-node-id="YfIjCeWz6DqtShhioRdmOt">
+    <aside id="side" data-page-node-id="iBw9XSsjRDHDUl8DfXs0HJ">
+      <div id="info" data-page-node-id="pJp0zLtURgpiSe4u7hPC2G"></div>
+      <div id="lmList" data-page-node-id="lSUgwdGBForxifCChwhxi5"></div>
+    </aside>
+    <main id="main" data-page-node-id="zInkqvtPBFFtprQzy9K27O">
+      <div class="stage" data-page-node-id="o571iEqhifb09egjI9IgV2">
+        <canvas id="cv" data-page-node-id="7COPXuHVNOGvu0G8Pm2GW5"></canvas>
+        <div id="cap" class="cap" data-page-node-id="D6taG1bYLZYyR05IkflKbh"></div>
+      </div>
+      <div id="views" data-page-node-id="FPALhTuXDBkoWAh2AVu8qx"></div>
+    </main>
+  </div>
+  <div id="foot" data-page-node-id="jrsFB5mgQcatpKcs4YqgiX">
+    <button class="b2" onclick="UI.undo()" data-page-node-id="HA3ulY7uRhAEqlEEGLcJ11">撤销(Z)</button>
+    <button class="b2" onclick="UI.prevL()" data-page-node-id="DrbhcD9YrEuOVdERywmUGH">← 上一点</button>
+    <button class="b1" onclick="UI.nextL()" data-page-node-id="8LTKTVCaCV7ONRZfZo5OOi">下一点 →</button>
+    <button class="b1" onclick="UI.exportJ()" data-page-node-id="jXxTdAHgGtqC842rNbo865">导出 JSON</button>
+    <span id="vstat" data-page-node-id="gPJ1C4GwXYAdXXzvCCIxD7"></span>
+  </div>
+  <div id="out" data-page-node-id="41EHFy4iaXZl5BzLZuF9Jz"></div>
+</div>
+<div id="errlog" data-page-node-id="J7X30wHc40JWWNuJm1HfQC"></div>
+</body>
+</html>

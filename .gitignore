@@ -1,0 +1,42 @@
+# ---- 环境 ----
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+.idea/
+.vscode/
+
+# ---- 隐私：照片绝不入库 ----
+source_photos/
+photos/
+*.jpg
+*.jpeg
+*.png
+!**/*.py
+!README.md
+!configs/**/*.md
+
+# ---- 大二进制/原始资源 ----
+*.iff
+*.dds
+*.bin
+*.npy
+*.npz
+*.pth
+*.onnx
+*.mat
+*.pkl
+*.gz
+backups/
+backups_*/
+mods/
+tmp/
+cache/
+outputs/debug/
+
+# ---- 临时渲染/调试 ----
+previews/debug/
+*.tmp
+*.log
