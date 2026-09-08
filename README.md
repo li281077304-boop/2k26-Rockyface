@@ -52,6 +52,90 @@ reports/    分轮状态报告
 annotator_desktop/  Windows 用的 25 点标定工具（浏览器 + 后端 http.server）
 ```
 
+## Mac Phase 1 — 3DDFA（先做这个）
+
+第一验收物：
+
+```
+geometry/rocky_3ddfa_front.obj
+```
+
+**在这个文件出来以前，不执行 NRICP。** 前置：3 个 ONNX 权重就位（见 `docs/ONNX_SETUP.md`），
+照片经 iCloud/局域网传入（不入库）。
+
+## Mac Phase 2 — canonical
+
+多张照片 3DDFA 全部成功后：
+
+1. Procrustes / similarity align
+2. 排除明显异常结果（表情/侧脸不稳/重建失败）
+3. 融合 identity shape
+
+输出：
+
+```
+geometry/rocky_3ddfa_canonical.obj
+```
+
+## Mac Phase 3 — transfer to native 8779
+
+**重要方向（易错）：**
+
+```
+source = native 8779（保持不变）
+target = Rocky canonical（形状目标）
+native 8779 → deform toward Rocky source → output 仍是 8779 topology
+```
+
+原因：最终必须保留 8779 的 vertex count / vertex order / topology / UV / skin weights。
+**不要覆盖 `geometry/native_8779.obj`。**
+
+使用（先验证 API 可 import）：
+
+```python
+import trimesh
+from trimesh.registration import nricp_amberg, nricp_sumner
+```
+
+分别输出：
+
+```
+geometry/rocky_8779_amberg_v01.obj
+geometry/rocky_8779_sumner_v01.obj
+```
+
+NRICP 前必须先 similarity / rigid align；必要时仅用少量 semantic landmarks 做初始化。
+**RBF 不是最终 dense transfer**，只作为 initialization / landmark refinement / local correction。
+
+如果两者都成功，比较：face length / cheek volume / nose bridge / nose tip / eye socket /
+jaw / chin / surface smoothness / 是否出现塌陷折叠。
+
+## Mac Phase 4 — preview only
+
+输出五视角：front / left45 / right45 / left90 / right90。
+
+在用户确认几何以前**禁止**：写回 IFF、texture、Morph、hair、DB2K、改 Face ID。
+
+## Windows handoff
+
+Mac 最终只需回传：
+
+```
+rocky_8779_*_best.obj
++ fitting report
++ preview images
+```
+
+Windows 再负责：OBJ/vertex data → 8779 VertexBuffer → native 8779 IFF → mods → 游戏内验收。
+
+## 写死的当前结论（勿再推翻）
+
+- **4133 = 杨瀚森（310s 原版），禁止修改**
+- **8779 = Rocky（李谨一）**；Face ID 已定 8779，不再换槽位
+- **native 8779 container 必须保留**为唯一合法基底
+- **旧「4133 整包改名 8779」的构建已废弃**（661 条目伪 8779 作废）
+- 照片永不入库；`.gitignore` 已锁死 *.jpg/*.png/*.iff/*.dds/*.bin/*.npy
+
 ## 禁止入库
 
 照片、.venv、*.iff、*.dds、backups、tmp、临时渲染、几十 MB 备份、任何游戏目录内容。
