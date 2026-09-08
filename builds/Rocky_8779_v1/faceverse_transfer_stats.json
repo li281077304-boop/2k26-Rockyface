@@ -1,0 +1,13 @@
+{
+  "source_native": "geometry/native_8779.obj",
+  "target_faceverse": "geometry/rocky_faceverse_front.obj",
+  "output": "geometry/rocky_8779_faceverse_v1.obj",
+  "vertex_count": 24484,
+  "face_count": 78412,
+  "vertex_order_preserved": true,
+  "transfer": "one-pass bbox similarity + nearest target displacement on facial/front envelope",
+  "identity_reconstruction": false,
+  "child_shape_priority": true,
+  "frozen_after_preview": true,
+  "texture_status": "blocked pending native UV/IFF assets"
+}

@@ -21,6 +21,10 @@
 
 已破解的 8779 IFF 结构见 `configs/8779_FORMAT.md`；各轮状态见 `reports/STATUS_20260908.md`。
 
+## Current production geometry
+
+`geometry/rocky_8779_faceverse_v1.obj`
+
 ## Mac 起步（不装 torch，先用官方 ONNX 路线）
 
 ```bash

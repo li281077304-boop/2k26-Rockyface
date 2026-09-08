@@ -36,6 +36,34 @@ tmp/
 cache/
 outputs/debug/
 
+# ---- Mac-local research environments / superseded candidates ----
+# Kept on disk for audit history; not part of the frozen Windows handoff.
+3DDFA_V2/
+FaceVerse_v4/
+FaceVerse_v4_official/
+builds/Rocky_8779_v1/rocky_8779_v1_base.obj
+geometry/rocky_3ddfa_*.obj
+geometry/rocky_8779_aligned.obj
+geometry/rocky_8779_amberg_v01.obj
+geometry/rocky_8779_init.obj
+geometry/rocky_8779_sumner_v01.obj
+geometry/rocky_8779_v1_base.obj
+geometry/rocky_faceverse_front.obj
+reports/faceverse_model_*.json
+reports/identity_model_selection_v02.md
+reports/rocky_8779_v1_base_stats.json
+reports/rocky_canonical_stats.json
+reports/rocky_faceverse_front_stats.json
+reports/rocky_faceverse_identity_audit.md
+reports/rocky_identity_audit_stats.json
+reports/rocky_nricp_stats.json
+scripts/build_canonical.py
+scripts/build_phase3.py
+scripts/build_v1_base.py
+scripts/identity_audit.py
+scripts/run_faceverse_front.py
+scripts/test_faceverse_model_load.py
+
 # ---- 临时渲染/调试 ----
 previews/debug/
 *.tmp

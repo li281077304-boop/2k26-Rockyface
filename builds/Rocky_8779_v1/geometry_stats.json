@@ -1,0 +1,10 @@
+{
+  "selected_base": "rocky_target_v02_head.obj",
+  "selection_reason": "existing stable child-proportion v02; no new reconstruction or NRICP",
+  "container": "native_8779.obj",
+  "vertex_count": 24484,
+  "face_count": 78412,
+  "face_index_order_preserved": true,
+  "uv_status": "native UV is external to OBJ and is not present in this workspace; texture build blocked pending native IFF/UV source",
+  "hair_status": "not included; native 8779 container preserved"
+}
